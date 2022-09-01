@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   ft_ft.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fcoindre <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/31 13:37:16 by fcoindre          #+#    #+#             */
-/*   Updated: 2022/09/01 15:52:08 by fcoindre         ###   ########.fr       */
+/*   Created: 2022/09/01 16:40:49 by fcoindre          #+#    #+#             */
+/*   Updated: 2022/09/01 17:03:17 by fcoindre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
+#include <stdio.h>
 
-void	ft_print_alphabet(void)
+void	ft_ft(int *nbr)
 {
-	char	c;
-
-	c = 'a';
-	while (c != '{')
-	{
-		write (1, &c, 1);
-		c++;
-	}
+	*nbr = 42;
 }
 /*
-int main (void)
+int	main(void)
 {
-	ft_print_alphabet ();
+	int nbr;
+	
+	ft_ft(&nbr);
+	printf("%d", nbr);
+	return (0);
 }*/

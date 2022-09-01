@@ -1,29 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   ft_div_mod.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fcoindre <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/31 13:37:16 by fcoindre          #+#    #+#             */
-/*   Updated: 2022/09/01 15:52:08 by fcoindre         ###   ########.fr       */
+/*   Created: 2022/09/01 19:13:22 by fcoindre          #+#    #+#             */
+/*   Updated: 2022/09/01 19:35:43 by fcoindre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
 
-void	ft_print_alphabet(void)
+void	ft_div_mod(int a, int b, int *div, int *mod)
 {
-	char	c;
-
-	c = 'a';
-	while (c != '{')
-	{
-		write (1, &c, 1);
-		c++;
-	}
+	*div = a / b;
+	*mod = a % b;
 }
+
 /*
-int main (void)
+int	main(void)
 {
-	ft_print_alphabet ();
+	int	a;
+	int	b;
+	int div;
+	int mod;
+
+	a = 25;
+	b = 4;
+	
+	printf("a = %d et b = %d\n",a,b);
+
+	ft_div_mod(a, b, &div, &mod);
+
+	printf("div = %d et mod = %d", div, mod);
+
+	return (0);
 }*/

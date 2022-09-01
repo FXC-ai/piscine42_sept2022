@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fcoindre <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/31 13:37:16 by fcoindre          #+#    #+#             */
-/*   Updated: 2022/09/01 15:52:08 by fcoindre         ###   ########.fr       */
+/*   Created: 2022/09/01 18:52:36 by fcoindre          #+#    #+#             */
+/*   Updated: 2022/09/01 19:09:15 by fcoindre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
 
-void	ft_print_alphabet(void)
+void	ft_swap(int *a, int *b)
 {
-	char	c;
+	int	c;
 
-	c = 'a';
-	while (c != '{')
-	{
-		write (1, &c, 1);
-		c++;
-	}
+	c = *a;
+	*a = *b;
+	*b = c;
 }
 /*
-int main (void)
+int	main(void)
 {
-	ft_print_alphabet ();
+	int a;
+	int b;
+
+	a = 12;
+	b = 98;
+
+	printf("a = %d and b = %d\n", a,b);
+	ft_swap(&a, &b);
+	printf("a = %d and b = %d", a,b);
+	return (0);
 }*/
