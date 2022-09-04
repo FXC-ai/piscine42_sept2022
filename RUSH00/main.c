@@ -6,76 +6,30 @@
 /*   By: fcoindre <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/03 10:33:14 by fcoindre          #+#    #+#             */
-/*   Updated: 2022/09/03 12:43:25 by fcoindre         ###   ########.fr       */
+/*   Updated: 2022/09/04 11:59:02 by fcoindre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#define CORNER_TLBR '/'
+#define WALL '*'
+#define CORNER_TRBL '\\'
 
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}	
-
-void	rush(int x, int y)
-{
-	char	corner_tlbr = '/';
-	char	corner_trbl = '\\';
-	char	star = '*';
-	
-	int	i;
-	int j;
-
-	x = x - 2;
-	y = y - 2;
-	
-	// Premiere ligne :
-	i = 0;
-	ft_putchar (corner_tlbr);
-	while (i < x)
-	{
-		ft_putchar(star);
-		i++;	
-	}
-	ft_putchar (corner_trbl);
-	ft_putchar ('\n');
-
-	// Corp du rectangle :
-	j = 0;
-	while (j < y)
-	{
-		i = 0;
-		ft_putchar(star);
-		while (i < x)
-		{
-			ft_putchar(' ');
-			i++;
-		}
-		ft_putchar(star);
-		j++;
-		ft_putchar('\n');
-	}
-
-	// Derniere ligne
-	i = 0;
-	ft_putchar (corner_trbl);
-	while (i < x)
-	{
-		ft_putchar(star);
-		i++;	
-	}
-	ft_putchar (corner_tlbr);
-	ft_putchar ('\n');
-
-}
+void	ft_putchar(char c);
+int		ft_absolute_value(int n);
+void	rush_x_eg_1(int y);
+void	rush_y_eg_1(int x);
+void	rush_xy_inf_2(int x, int y, int nbr_c_max);
+void	display_xy_sup_2(int x, int y, int ind_x, int ind_y);
+void	rush_xy_sup_2(int x, int y, int nbr_c_max);
+void	rush(int x, int y);
 
 int	main(void)
 {
-	int x;
-	int	y;
-
-	x = 1;
-	y = 5;
-
-	rush (x,y);
+	rush (5, 3);
+	rush (5, 1);
+	rush (1, 1);
+	rush (1, 5);
+	rush (4, 4);
+	return (0);
 }
