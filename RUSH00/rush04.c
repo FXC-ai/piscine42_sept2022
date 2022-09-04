@@ -6,14 +6,14 @@
 /*   By: fcoindre <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/03 10:33:14 by fcoindre          #+#    #+#             */
-/*   Updated: 2022/09/04 16:59:26 by fcoindre         ###   ########.fr       */
+/*   Updated: 2022/09/04 17:30:04 by fcoindre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#define CORNER_TLBR '/'
-#define WALL '*'
-#define CORNER_TRBL '\\'
+#define CORNER_TLBR 'A'
+#define WALL 'B'
+#define CORNER_TRBL 'C'
 
 void	ft_putchar(char c);
 void	rush_xy_eg_1(int x, int y);
