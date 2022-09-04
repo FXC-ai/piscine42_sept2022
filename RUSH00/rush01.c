@@ -6,7 +6,7 @@
 /*   By: fcoindre <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/03 10:33:14 by fcoindre          #+#    #+#             */
-/*   Updated: 2022/09/04 11:58:36 by fcoindre         ###   ########.fr       */
+/*   Updated: 2022/09/04 12:26:47 by fcoindre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,47 +16,38 @@
 #define CORNER_TRBL '\\'
 
 void	ft_putchar(char c);
-int		ft_absolute_value(int n);
-void	rush_x_eg_1(int y);
-void	rush_y_eg_1(int x);
+void	rush_xy_eg_1(int x, int y);
 void	rush_xy_inf_2(int x, int y, int nbr_c_max);
 void	display_xy_sup_2(int x, int y, int ind_x, int ind_y);
 void	rush_xy_sup_2(int x, int y, int nbr_c_max);
 void	rush(int x, int y);
 
-int	ft_absolute_value(int n)
+void	rush_xy_eg_1(int x, int y)
 {
-	if (n < 0)
+	if (x == 1)
 	{
-		return (n * (-1));
-	}
-	return (n);
-}
-
-void	rush_x_eg_1(int y)
-{
-	ft_putchar(CORNER_TLBR);
-	ft_putchar('\n');
-	while (y > 2)
-	{
-		ft_putchar (WALL);
+		ft_putchar(CORNER_TLBR);
 		ft_putchar('\n');
-		y--;
+		while (y > 2)
+		{
+			ft_putchar (WALL);
+			ft_putchar('\n');
+			y--;
+		}
+		ft_putchar(CORNER_TRBL);
+		ft_putchar('\n');
 	}
-	ft_putchar(CORNER_TRBL);
-	ft_putchar('\n');
-}
-
-void	rush_y_eg_1(int x)
-{
-	ft_putchar(CORNER_TLBR);
-	while (x > 2)
+	if (y == 1)
 	{
-		ft_putchar(WALL);
-		x--;
+		ft_putchar(CORNER_TLBR);
+		while (x > 2)
+		{
+			ft_putchar(WALL);
+			x--;
+		}
+		ft_putchar(CORNER_TRBL);
+		ft_putchar('\n');
 	}
-	ft_putchar(CORNER_TRBL);
-	ft_putchar('\n');
 }
 
 void	rush_xy_inf_2(int x, int y, int nbr_c_max)
@@ -69,9 +60,9 @@ void	rush_xy_inf_2(int x, int y, int nbr_c_max)
 		ft_putchar('\n');
 	}
 	if (x == 1 && nbr_c_max > 1)
-		rush_x_eg_1(y);
+		rush_xy_eg_1(x, y);
 	if (y == 1 && nbr_c_max > 1)
-		rush_y_eg_1(x);
+		rush_xy_eg_1(x, y);
 }
 
 void	display_xy_sup_2(int x, int y, int ind_x, int ind_y)
@@ -131,8 +122,10 @@ void	rush(int x, int y)
 	ind_x = 0;
 	ind_y = 0;
 	nbr_c_max = x * y;
-	x = ft_absolute_value (x);
-	y = ft_absolute_value (y);
+	if (x < 0)
+		x = x * (-1);
+	if (y < 0)
+		y = y * (-1);
 	if (x < 2 || y < 2)
 	{
 		rush_xy_inf_2(x, y, nbr_c_max);
