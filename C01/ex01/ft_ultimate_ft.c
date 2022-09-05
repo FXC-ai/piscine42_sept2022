@@ -6,10 +6,9 @@
 /*   By: fcoindre <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 17:16:04 by fcoindre          #+#    #+#             */
-/*   Updated: 2022/09/01 18:50:39 by fcoindre         ###   ########.fr       */
+/*   Updated: 2022/09/04 17:51:23 by fcoindre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
 
 void	ft_ultimate_ft(int *********nbr)
 {

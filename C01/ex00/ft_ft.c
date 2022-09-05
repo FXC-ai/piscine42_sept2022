@@ -6,10 +6,9 @@
 /*   By: fcoindre <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 16:40:49 by fcoindre          #+#    #+#             */
-/*   Updated: 2022/09/01 17:03:17 by fcoindre         ###   ########.fr       */
+/*   Updated: 2022/09/04 17:49:49 by fcoindre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
 
 void	ft_ft(int *nbr)
 {
