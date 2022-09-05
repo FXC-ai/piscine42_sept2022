@@ -6,16 +6,15 @@
 /*   By: fcoindre <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/02 15:10:14 by fcoindre          #+#    #+#             */
-/*   Updated: 2022/09/04 16:52:15 by fcoindre         ###   ########.fr       */
+/*   Updated: 2022/09/05 11:27:00 by fcoindre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdio.h>
-#include <string.h>
+/*#include <stdio.h>
+#include <string.h>*/
 
-int	ft_strlen(char *str);
-char *ft_strncpy(char *dest, char *src, unsigned int n);
+int		ft_strlen(char *str);
+char	*ft_strncpy(char *dest, char *src, unsigned int n);
 
 int	ft_strlen(char *str)
 {
@@ -30,46 +29,37 @@ int	ft_strlen(char *str)
 	return (count);
 }
 
-char *ft_strncpy(char *dest, char *src, unsigned int n)
+char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
 	unsigned int	i;
-	
+	unsigned int	lengh_src;
 
-	unsigned int lengh_src = ft_strlen(src);
-	
+	lengh_src = ft_strlen(src);
+	i = 0;
+	while (i < n)
+	{
+		dest[i] = src[i];
+		i++;
+	}
 	if (lengh_src < n)
 	{
-		i = 0;
 		while (i < lengh_src)
 		{
-			dest[i] = src[i];
-			i++;
-		}
-		while (i < n)
-		{
-			dest[i] = src[i];
+			dest[i] = '\0';
 			i++;
 		}
 	}
-	
-	
-
 	return (dest);
-
 }
-
-
+/*
 int main(void)
 {
-	char *str0 = "abcdefghijkl";
-	char dest[5] = {0,0,0,0,0};
-	char dest_test[5] = {0,0,0,1,0};
+	char *str0 = "abcde";
+	char dest[8] = {0,0,0,1,0,1,0,0};
+	char dest_test[] = {0,0,0,1,0,1,0,0};
 	unsigned int n;
 	int i;
 	
-	int len = ft_strlen(dest_test);	
-	printf("IIIIIIIIIIIIIII %d IIIIIIIIIIIIIIIII\n", len);
-
 	printf("chaine initiale : %s\n", str0);	
 
 	i = 0;
@@ -77,7 +67,7 @@ int main(void)
 	strncpy(dest, str0, n);
 	ft_strncpy(dest_test, str0, n);
 	printf("\nPour n = %d\n\n", n);
-	while (i < 5)
+	while (i < 8)
 	{
 		printf("dest[%d] = %c (%d)  ", i, dest[i], dest[i]);
 		printf("ft_strcpy : dest[%d] = %c (%d)\n", i, dest_test[i], dest_test[i]);
@@ -89,7 +79,7 @@ int main(void)
 	strncpy(dest, str0, n);
 	ft_strncpy(dest_test, str0, n);
 	printf("\nPour n = %d\n\n", n);
-	while (i < 5)
+	while (i < 8)
 	{
 		printf("dest[%d] = %c (%d)  ", i, dest[i], dest[i]);
 		printf("ft_strcpy : dest[%d] = %c (%d)\n", i, dest_test[i], dest_test[i]);
@@ -101,7 +91,7 @@ int main(void)
 	strncpy(dest, str0, n);
 	ft_strncpy(dest_test, str0, n);
 	printf("\nPour n = %d\n\n", n);
-	while (i < 5)
+	while (i < 8)
 	{
 		printf("dest[%d] = %c (%d)  ", i, dest[i], dest[i]);
 		printf("ft_strcpy : dest[%d] = %c (%d)\n", i, dest_test[i], dest_test[i]);
@@ -113,7 +103,7 @@ int main(void)
 	strncpy(dest, str0, n);
 	ft_strncpy(dest_test, str0, n);
 	printf("\nPour n = %d\n\n", n);
-	while (i < 5)
+	while (i < 8)
 	{
 		printf("dest[%d] = %c (%d)  ", i, dest[i], dest[i]);
 		printf("ft_strcpy : dest[%d] = %c (%d)\n", i, dest_test[i], dest_test[i]);
@@ -121,4 +111,4 @@ int main(void)
 	}
 
 	return (0);
-}
+}*/

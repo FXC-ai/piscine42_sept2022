@@ -23,7 +23,7 @@ void	ft_sort_int_tab(int *tab, int size)
 	while (check < size)
 	{
 		i = 0;
-		while (i < (sizei - 1))
+		while (i < (size - 1))
 		{
 			if (tab[i] > tab[i + 1])
 			{
