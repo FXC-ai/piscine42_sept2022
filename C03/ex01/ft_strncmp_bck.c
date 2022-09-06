@@ -6,7 +6,7 @@
 /*   By: fcoindre <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 11:54:38 by fcoindre          #+#    #+#             */
-/*   Updated: 2022/09/06 17:19:48 by fcoindre         ###   ########.fr       */
+/*   Updated: 2022/09/06 17:15:03 by fcoindre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 /*
@@ -40,7 +40,6 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
 	}
 	return (0);
 }
-
 /*
 int main ()
 {
@@ -59,16 +58,14 @@ int main ()
 	int test1 = strncmp(s1_test1, s2_test1, n);
 	int test2 = strncmp(s1_test2, s2_test2, n);
 
-	printf("strncmp : TEST0 = %d || TEST1 = %d || TEST2 = %d\n", 
-			test0, test1, test2);
+	printf("strncmp : TEST0 = %d || TEST1 = %d || TEST2 = %d\n", test0, test1, test2);
 
 
 	test0 = ft_strncmp(s1_test0, s2_test0, n);
 	test1 = ft_strncmp(s1_test1, s2_test1, n);
 	test2 = ft_strncmp(s1_test2, s2_test2, n);
 	
-	printf("ft_strncmp : TEST0 = %d || TEST1 = %d || TEST2 = %d\n", 
-			test0, test1, test2);
+	printf("ft_strncmp : TEST0 = %d || TEST1 = %d || TEST2 = %d\n", test0, test1, test2);
 	
 	return 0;
 }*/
