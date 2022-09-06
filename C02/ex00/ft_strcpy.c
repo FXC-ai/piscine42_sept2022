@@ -6,7 +6,7 @@
 /*   By: fcoindre <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/02 12:25:51 by fcoindre          #+#    #+#             */
-/*   Updated: 2022/09/02 15:00:21 by fcoindre         ###   ########.fr       */
+/*   Updated: 2022/09/06 09:16:54 by fcoindre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 /*
@@ -23,26 +23,40 @@ char	*ft_strcpy(char *dest, char *src)
 		dest[i] = *src;
 		i++;
 		src++;
-	}	
+	}
+	dest[i] = '\0';
 	return (dest);
 }
 /*
 int	main(void)
 {
 	char *str0 = "Bing";
-	char str1[5];
+	char str1[5] = {1,1,1,1,1};
+	char str2[5] = {1,1,1,1,1};
+	int i;
 
-	strcpy(str1, str0);
+	char *dest0 = strcpy(str1, str0);
+	char *dest1 = ft_strcpy(str2, str0);
 
-	printf("Fonction strcpy str1 = %s\n", str1);
 
-	char str3[5];
+	printf("Source  = %s\n", str0);
 
-	char *dest = ft_strcpy(str3, str0);
 
-	printf("Fonction ft_strcpy str3 = %s\n", str3);
+	printf("dest0 = %s\n", dest0);
+	i = 0;
+	while (i < 5)
+	{
+		printf("str[%d] = %d\n",i, str1[i]);
+		i++;
+	}
 
-	printf("Fonction ft_strcpy dest = %p", dest);
+	printf("dest1 = %s\n", dest1);
+	i = 0;
+	while (i < 5)
+	{
+		printf("str[%d] = %d\n",i, str2[i]);
+		i++;
+	}
 
 	return (0);
 }*/
