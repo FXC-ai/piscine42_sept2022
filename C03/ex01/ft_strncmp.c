@@ -6,7 +6,7 @@
 /*   By: fcoindre <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 11:54:38 by fcoindre          #+#    #+#             */
-/*   Updated: 2022/09/07 13:08:25 by fcoindre         ###   ########.fr       */
+/*   Updated: 2022/09/07 19:03:51 by fcoindre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 /*
@@ -40,7 +40,6 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
 	}
 	return (0);
 }
-
 /*
 int main ()
 {
@@ -53,7 +52,7 @@ int main ()
 	char *s1_test2 = "a i iiiiii\n....bcDe";
 	char *s2_test2 = "azbcde";
 
-	unsigned int n = 11;
+	unsigned int n = 0;
 
 	int test0 = strncmp(s1_test0, s2_test0, n);
 	int test1 = strncmp(s1_test1, s2_test1, n);
