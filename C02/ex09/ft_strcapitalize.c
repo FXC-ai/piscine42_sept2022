@@ -6,12 +6,12 @@
 /*   By: fcoindre <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/05 16:44:55 by fcoindre          #+#    #+#             */
-/*   Updated: 2022/09/05 19:37:34 by fcoindre         ###   ########.fr       */
+/*   Updated: 2022/09/07 11:10:31 by fcoindre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/*
+
 #include <stdio.h>
-*/
+
 char	*ft_strcapitalize(char *str);
 
 char	*ft_strcapitalize(char *str)
@@ -40,13 +40,13 @@ char	*ft_strcapitalize(char *str)
 	}
 	return (str);
 }
-/*
+
 int main()
 {
-	char str_test[] = "-sut, coMnt tu vas ? 42ts +quER-dx; cite+et+un";
+	char str_test[] = "-{sut, coMnt tu vas ? 42ts +quER-dx; cite+et+un";
 	printf("AVANT : %s\n", str_test);
 	ft_strcapitalize(str_test);
 	printf("APRES : %s", str_test);
 	
 	return (0);
-}*/
+}

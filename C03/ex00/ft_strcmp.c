@@ -6,13 +6,13 @@
 /*   By: fcoindre <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 10:29:04 by fcoindre          #+#    #+#             */
-/*   Updated: 2022/09/06 11:53:39 by fcoindre         ###   ########.fr       */
+/*   Updated: 2022/09/07 11:32:07 by fcoindre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/*
+
 #include <string.h>
 #include <stdio.h>
-*/
+
 int	ft_strcmp(char *s1, char *s2)
 {
 	int	result;
@@ -30,7 +30,7 @@ int	ft_strcmp(char *s1, char *s2)
 	}
 	return (result);
 }
-/*
+
 int main()
 {
 	char *s1 = "aAbce\200";
@@ -42,4 +42,4 @@ int main()
 	printf("strcmp : %d || ft_strcmp : %d\n", r, r_mafonction);
 
 	return 0;
-}*/
+}
