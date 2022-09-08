@@ -6,13 +6,16 @@
 /*   By: fcoindre <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 10:59:42 by fcoindre          #+#    #+#             */
-/*   Updated: 2022/09/08 10:43:19 by fcoindre         ###   ########.fr       */
+/*   Updated: 2022/09/08 18:03:33 by fcoindre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#define INT_MIN -2147483648
-#define INT_MAX 2147483647
+
+int		ft_find_power(int nb);
+int		ft_find_divider(int count);
+void	print_digit(int a);
+void	ft_putnbr(int nb);
 
 int	ft_find_power(int nb)
 {
@@ -74,9 +77,15 @@ void	ft_putnbr(int nb)
 		}
 	}
 }
-
+/*
 int main(void)
 {
-	ft_putnbr(26001111);
+	int i = -10;
+	
+	while (i < 21)
+	{
+		ft_putnbr(i);
+		i += 1;
+	}
 	return (0);
-}
+}*/

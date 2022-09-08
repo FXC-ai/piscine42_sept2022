@@ -6,11 +6,15 @@
 /*   By: fcoindre <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 18:53:00 by fcoindre          #+#    #+#             */
-/*   Updated: 2022/09/08 10:12:58 by fcoindre         ###   ########.fr       */
+/*   Updated: 2022/09/08 17:33:11 by fcoindre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+/*
 #include <stdio.h>
+*/
+int	ft_isspace(char a);
+int	ft_space_min_finder(char *str, int *is_negativ);
+int	ft_atoi(char *str);
 
 int	ft_isspace(char a)
 {
@@ -73,7 +77,7 @@ int	ft_atoi(char *str)
 /*
 int main ()
 {
-	char *input = " \n  ---+--+1234ab567";
+	char *input = "----17888 \n	---+--+1234ab567";
 
 	int result = ft_atoi(input);
 
