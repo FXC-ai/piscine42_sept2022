@@ -6,7 +6,7 @@
 /*   By: fcoindre <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 18:53:00 by fcoindre          #+#    #+#             */
-/*   Updated: 2022/09/08 09:41:04 by fcoindre         ###   ########.fr       */
+/*   Updated: 2022/09/08 10:12:58 by fcoindre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ int	ft_isspace(char a)
 	if (a == ' '
 		|| a == '\f'
 		|| a == '\n'
-	 	|| a == '\r'
-	 	|| a == '\t'
- 		|| a == '\v')
+		|| a == '\r'
+		|| a == '\t'
+		|| a == '\v')
 	{
 		return (1);
 	}
@@ -37,7 +37,7 @@ int	ft_space_min_finder(char *str, int *is_negativ)
 	}
 	while (str[i] == '-' || str[i] == '+')
 	{
-		if(str[i] == '-')
+		if (str[i] == '-')
 		{
 			*is_negativ *= -1;
 		}
@@ -50,8 +50,8 @@ int	ft_atoi(char *str)
 {
 	int	i;
 	int	is_negativ;
-	int result;
-	int multiplier;
+	int	result;
+	int	multiplier;
 
 	multiplier = 1;
 	result = 0;

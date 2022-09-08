@@ -6,7 +6,7 @@
 /*   By: fcoindre <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 10:59:42 by fcoindre          #+#    #+#             */
-/*   Updated: 2022/09/07 18:52:09 by fcoindre         ###   ########.fr       */
+/*   Updated: 2022/09/08 10:43:19 by fcoindre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,9 +74,9 @@ void	ft_putnbr(int nb)
 		}
 	}
 }
-/*
+
 int main(void)
 {
-	ft_putnbr(INT_MIN);
+	ft_putnbr(26001111);
 	return (0);
-}*/
+}
