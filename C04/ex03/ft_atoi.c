@@ -6,7 +6,7 @@
 /*   By: fcoindre <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 18:53:00 by fcoindre          #+#    #+#             */
-/*   Updated: 2022/09/08 20:07:00 by fcoindre         ###   ########.fr       */
+/*   Updated: 2022/09/09 11:48:21 by fcoindre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ int	ft_atoi(char *str)
 
 int main ()
 {
-	char *input = "   '   ----17888 \n	---+--+1234ab567";
+	char *input = "   +   ----17888 \n	---+--+1234ab567";
 
 	int result = ft_atoi(input);
 
