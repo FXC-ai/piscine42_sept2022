@@ -6,12 +6,12 @@
 /*   By: fcoindre <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 10:00:44 by fcoindre          #+#    #+#             */
-/*   Updated: 2022/09/09 10:28:50 by fcoindre         ###   ########.fr       */
+/*   Updated: 2022/09/10 11:00:08 by fcoindre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/*
+
 #include <stdio.h>
-*/
+
 int	ft_iterative_power(int nb, int power)
 {
 	int	result;
@@ -28,12 +28,14 @@ int	ft_iterative_power(int nb, int power)
 	}
 	return (result);
 }
-/*
-int main()
+
+int main(int argc, char *argv[])
 {
+	printf("nbr = %d\n", argc);
+	printf("nom = %s\n", argv[0]);
 	int r = ft_iterative_power(42,3);
 
 	printf("r = %d", r);
 
 	return (0);
-}*/
+}
