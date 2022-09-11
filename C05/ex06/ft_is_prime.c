@@ -6,7 +6,7 @@
 /*   By: fcoindre <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/11 14:56:48 by fcoindre          #+#    #+#             */
-/*   Updated: 2022/09/11 16:51:59 by fcoindre         ###   ########.fr       */
+/*   Updated: 2022/09/11 20:09:25 by fcoindre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 /*
@@ -39,11 +39,11 @@ int	ft_is_prime(int nb)
 int main ()
 {
 
-	int test = 0;
+	int test = 1000000000;
 	printf("Pour INT_MAX 2147483647 : %d\n", ft_is_prime(2147483647));
 
 
-	while (test < 1000)
+	while (test < 1100000000)
 	{
 		if (ft_is_prime(test) == 1)
 		{
