@@ -6,12 +6,12 @@
 /*   By: fcoindre <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 10:00:44 by fcoindre          #+#    #+#             */
-/*   Updated: 2022/09/10 11:00:08 by fcoindre         ###   ########.fr       */
+/*   Updated: 2022/09/11 17:43:22 by fcoindre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+/*
 #include <stdio.h>
-
+*/
 int	ft_iterative_power(int nb, int power)
 {
 	int	result;
@@ -28,14 +28,18 @@ int	ft_iterative_power(int nb, int power)
 	}
 	return (result);
 }
-
-int main(int argc, char *argv[])
+/*
+int main()
 {
-	printf("nbr = %d\n", argc);
-	printf("nom = %s\n", argv[0]);
-	int r = ft_iterative_power(42,3);
-
-	printf("r = %d", r);
+	printf("0 puissance 3 = %d\n",  ft_iterative_power(0,3));
+	printf("0 puissance -4 = %d\n",  ft_iterative_power(0,-4));
+	printf("-4 puissance 3 = %d\n",  ft_iterative_power(-4,3));
+	printf("7 puissance 0 = %d\n",  ft_iterative_power(7,0));
+	printf("46340 puissance 2 = %d\n",  ft_iterative_power(46340, 2));
+	printf("-46340 puissance 2 = %d\n",  ft_iterative_power(-46340, 2));
+	printf("-4 puissance 0 = %d\n",  ft_iterative_power(-4,0));
+	printf("0 puissance 0 = %d\n",  ft_iterative_power(0,0));
+	printf("463 puissance -3 = %d\n",  ft_iterative_power(463, -3));
 
 	return (0);
-}
+}*/
