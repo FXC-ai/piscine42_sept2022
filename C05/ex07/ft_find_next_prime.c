@@ -6,7 +6,7 @@
 /*   By: fcoindre <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/11 16:55:22 by fcoindre          #+#    #+#             */
-/*   Updated: 2022/09/12 11:09:43 by fcoindre         ###   ########.fr       */
+/*   Updated: 2022/09/12 16:27:12 by fcoindre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 /*
@@ -30,9 +30,10 @@ int	ft_is_prime(int nb)
 	return (1);
 }
 
-int	find_next_prime(int nb)
+int	ft_find_next_prime(int nb)
 {
-	nb = nb + 1;
+	if (ft_is_prime(nb) == 1)
+		return (nb);
 	while (ft_is_prime(nb) == 0)
 	{
 		nb++;
@@ -42,19 +43,21 @@ int	find_next_prime(int nb)
 /*
 int main ()
 {
-	printf("-4 > %d\n", find_next_prime(-4));
-	printf("0 > %d\n", find_next_prime(0));
-	printf("1 > %d\n", find_next_prime(1));
-	printf("2 > %d\n", find_next_prime(2));
-	printf("3 > %d\n", find_next_prime(3));
-	printf("4 > %d\n", find_next_prime(4));
-	printf("11 > %d\n", find_next_prime(11));
-	printf("908 > %d\n", find_next_prime(908));
-	printf("1000000000 > %d\n", find_next_prime(1000000000));
-	printf("1100000000 > %d\n", find_next_prime(1100000000));
-	printf("1000002000 > %d\n", find_next_prime(1000002000));
-	printf("1000900000 > %d\n", find_next_prime(1000900000));
-	printf("2000000000 > %d\n", find_next_prime(2000000000));
-	printf("INT_MAX-1 > %d\n", find_next_prime(2147483646));
+	printf("-2450 > %d\n", ft_find_next_prime(-4));
+	printf("0 > %d\n", ft_find_next_prime(0));
+	printf("1 > %d\n", ft_find_next_prime(1));
+	printf("2 > %d\n", ft_find_next_prime(2));
+	printf("3 > %d\n", ft_find_next_prime(3));
+	printf("4 > %d\n", ft_find_next_prime(4));
+	printf("11 > %d\n", ft_find_next_prime(11));
+	printf("908 > %d\n", ft_find_next_prime(908));
+	printf("911 > %d\n", ft_find_next_prime(911));
+	printf("1000000000 > %d\n", ft_find_next_prime(1000000000));
+	printf("1100000000 > %d\n", ft_find_next_prime(1100000000));
+	printf("1000002000 > %d\n", ft_find_next_prime(1000002000));
+	printf("2147483646 > %d\n", ft_find_next_prime(2147483647));
+	printf("2147483647 > %d\n", ft_find_next_prime(2147483647));
+
+	printf("INT_MAX-1 > %d\n", ft_find_next_prime(2147483646));
 
 }*/
