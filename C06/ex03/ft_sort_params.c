@@ -6,7 +6,7 @@
 /*   By: fcoindre <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 12:01:27 by fcoindre          #+#    #+#             */
-/*   Updated: 2022/09/12 17:28:50 by fcoindre         ###   ########.fr       */
+/*   Updated: 2022/09/12 18:37:15 by fcoindre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 void	ft_putstr(char *str);
 int		ft_strcmp(char *s1, char *s2);
 void	ft_display_params(int argc, char **argv);
+void	swap(char **s1, char **s2);
 
 void	ft_putstr(char *str)
 {
@@ -44,6 +45,15 @@ int	ft_strcmp(char *s1, char *s2)
 	return (result);
 }
 
+void	swap(char **s1, char **s2)
+{
+	char	*temp;
+
+	temp = *s1;
+	*s1 = *s2;
+	*s2 = temp;
+}
+
 void	ft_display_params(int argc, char **argv)
 {
 	int	i;
@@ -61,7 +71,6 @@ int	main(int argc, char *argv[])
 {
 	int		j;
 	int		i;
-	char	*temp;
 
 	i = 1;
 	j = 1;
@@ -74,9 +83,7 @@ int	main(int argc, char *argv[])
 			{
 				if (ft_strcmp(argv[i], argv[i + 1]) > 0)
 				{
-					temp = argv[i];
-					argv[i] = argv[i + 1];
-					argv[i + 1] = temp;
+					swap(&argv[i], &argv[i + 1]);
 				}
 				i++;
 			}
