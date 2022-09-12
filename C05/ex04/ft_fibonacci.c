@@ -6,7 +6,7 @@
 /*   By: fcoindre <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/11 12:43:53 by fcoindre          #+#    #+#             */
-/*   Updated: 2022/09/11 13:09:52 by fcoindre         ###   ########.fr       */
+/*   Updated: 2022/09/12 09:41:14 by fcoindre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 /*
@@ -25,7 +25,7 @@ int	ft_fibonacci(int index)
 /*
 int main ()
 {
-	int i = 0;
+	int i = -2;
 
 	while (i < 47)
 	{

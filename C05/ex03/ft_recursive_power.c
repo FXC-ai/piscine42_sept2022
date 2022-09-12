@@ -6,7 +6,7 @@
 /*   By: fcoindre <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 10:30:50 by fcoindre          #+#    #+#             */
-/*   Updated: 2022/09/11 17:56:42 by fcoindre         ###   ########.fr       */
+/*   Updated: 2022/09/12 10:19:44 by fcoindre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 /*
@@ -34,5 +34,6 @@ int main ()
 	printf("-4 puissance 0 = %d\n",  ft_recursive_power(-4,0));
 	printf("0 puissance 0 = %d\n",  ft_recursive_power(0,0));
 	printf("463 puissance -3 = %d\n",  ft_recursive_power(463, -3));
+	printf("21 puissance 7 = %d\n",  ft_recursive_power(21, 7));
 	return 0;
 }*/
