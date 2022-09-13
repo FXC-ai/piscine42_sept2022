@@ -6,7 +6,7 @@
 /*   By: fcoindre <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 15:39:30 by fcoindre          #+#    #+#             */
-/*   Updated: 2022/09/13 16:19:22 by fcoindre         ###   ########.fr       */
+/*   Updated: 2022/09/13 17:59:49 by fcoindre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,41 +24,57 @@ int	ft_strlen(char *str)
 	return (count);
 }
 
-char	*ft_strcpy(char *dest, char *src)
+int	ft_strslen(int size, char **strs, char *sep)
 {
-	int	i;
+	int strs_size;
+	int i;
 
+	strs_size = 0;
 	i = 0;
-	while (*src != '\0')
+	while (i < size)
 	{
-		dest[i] = src[i];
+		strs_size += ft_strlen(strs[i]);
 		i++;
 	}
-	dest[i] = '\0';
-	return (dest);
+	strs_size += (size - 1) * ft_strlen(sep);
+	strs_size++;
+	
+	return strs_size;
 }
-
 
 char	*ft_strjoin(int size, char **strs, char *sep)
 {
 	int str_size;
 	int i;
-	(void) sep;
+	int j;
+	int k;
+	char *dest;
 
-	str_size = 0;
-	i = 0;
-	while (i < size)
+	str_size = ft_strslen(size, strs, sep);
+	dest = malloc(sizeof(char) * str_size);
+	if (dest != NULL)
 	{
-		str_size += ft_strlen(strs[i]);
+		i = 0;
+		j = 0;
+		k = 0;
+		while (i < size)
+		{
+			j = 0;
+			while (strs[i][j] != '\0')
+			{
+				dest[k++] = strs[i][j++];
+			}
+			j = 0;
+			if (i < (size - 1))
+			{
+				while (sep[j] != '\0')
+					dest[k++] = sep[j++];
+			}
 		i++;
+		}
+		dest[k] = '\0';
 	}
-
-	printf("str_size = %d\n", str_size);
-	str_size += (size - 1) * ft_strlen(sep);
-	str_size++;
-	printf("str_size = %d", str_size);
-	
-	return NULL;
+	return dest;
 }
 
 
@@ -66,7 +82,7 @@ int main ()
 {
 	char *strs[5];
 	int size = 5;
-	char *sep = " ";
+	char *sep = " --- ";
 
 	strs[0] = "Ceci est";
 	strs[1] = "une longue";
@@ -74,7 +90,9 @@ int main ()
 	strs[3] = "caractere";
 	strs[4] = "tres utile!";
 	
-	ft_strjoin(size, strs, sep);
+	char *dest = ft_strjoin(size, strs, sep);
+
+	printf("dest = %s", dest);
 
 	return 0;
 }
