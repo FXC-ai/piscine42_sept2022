@@ -6,12 +6,16 @@
 /*   By: fcoindre <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 15:39:30 by fcoindre          #+#    #+#             */
-/*   Updated: 2022/09/13 19:07:04 by fcoindre         ###   ########.fr       */
+/*   Updated: 2022/09/14 11:33:19 by fcoindre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <stdio.h>
+
+int	ft_strlen(char *str);
+int	ft_strslen(int size, char **strs, char *sep);
+int	strscpy(int size, char **dest, char **strs, char *sep);
 
 int	ft_strlen(char *str)
 {
@@ -72,10 +76,13 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	char	*dest;
 
 	dest = NULL;
+	if (size == 0)
+	{
+		dest = malloc(0);
+		return (dest);
+	}
 	str_size = ft_strslen(size, strs, sep);
 	dest = malloc(sizeof(char) * str_size);
-	if (size == 0)
-		return dest;
 	if (dest != NULL)
 	{
 		ind_end_str = strscpy(size, &dest, strs, sep);
@@ -83,22 +90,22 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	}
 	return (dest);
 }
-
+/*
 int main ()
 {
 	char *strs[5];
 	int size = 5;
-	char *sep = " ";
+	char *sep = "\n";
 
-	strs[0] = "aaa";
-	strs[1] = "bbbb";
-	strs[2] = "cccc";
-	strs[3] = "ddddd";
-	strs[4] = "eeeeee";
+	strs[0] = "a";
+	strs[1] = "b";
+	strs[2] = "c";
+	strs[3] = "dfdfdffd";
+	strs[4] = "ccccc";
 	
 	char *dest = ft_strjoin(size, strs, sep);
 
 	printf("dest = %s", dest);
 	free(dest);
 	return 0;
-}
+}*/

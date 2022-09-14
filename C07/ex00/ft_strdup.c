@@ -6,14 +6,15 @@
 /*   By: fcoindre <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 09:25:52 by fcoindre          #+#    #+#             */
-/*   Updated: 2022/09/13 10:10:07 by fcoindre         ###   ########.fr       */
+/*   Updated: 2022/09/14 10:45:43 by fcoindre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/*
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-*/
+#include <ctype.h>
+
 int	ft_strlen(char *str)
 {
 	int	count;
@@ -35,6 +36,8 @@ char	*ft_strdup(char *src)
 
 	src_size = ft_strlen(src);
 	src_dup = malloc(src_size * sizeof(*src));
+	if (src_dup == NULL)
+		return (NULL);
 	i = 0;
 	while (src[i] != '\0')
 	{
@@ -47,13 +50,14 @@ char	*ft_strdup(char *src)
 /*
 int main ()
 {
-
-	char *src = "Chaine a copier \t j'espere que 9()---+ fonctionne     .  ";
+	char *src = "\t\n";
 	
-	printf("src_size = 15 sizeof : %lu\n", 15 * sizeof(*src));
 	char *src_dup = ft_strdup(src);
 	char *src_dup_real = strdup(src);
 
 	printf("ft_strdup : %s\n", src_dup);
 	printf("strdup    : %s\n", src_dup_real);
+	
+	free(src_dup);
+	free(src_dup_real);
 }*/
