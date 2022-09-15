@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fcoindre <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/15 13:20:56 by fcoindre          #+#    #+#             */
-/*   Updated: 2022/09/15 13:25:42 by fcoindre         ###   ########.fr       */
+/*   Created: 2022/09/01 20:02:18 by fcoindre          #+#    #+#             */
+/*   Updated: 2022/09/01 20:41:40 by fcoindre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_stock_str.h"
-#include <stdio.h>
+#include <unistd.h>
+
+void	ft_putstr(char *str)
+{
+	while (*str != '\0')
+	{
+		write(1, str, 1);
+		str++;
+	}
+}
+
 /*
-struct s_stockstr *ft_strs_to_tab(int ac, char **av);
-
-struct s_stockstr *ft_strs_to_tab(int ac, char **av)
+int main (void)
 {
+	char *str = "poire";
 
+	ft_putstr(str);
 
-}
-*/
-
-int main ()
-{
-
-
-	return 0;
-}
+	return (0);
+}*/
