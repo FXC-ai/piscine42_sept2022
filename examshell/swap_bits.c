@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_boolean.h                                       :+:      :+:    :+:   */
+/*   swap_bits.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fcoindre <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/15 10:50:57 by fcoindre          #+#    #+#             */
-/*   Updated: 2022/09/16 08:57:49 by fcoindre         ###   ########.fr       */
+/*   Created: 2022/09/15 20:57:41 by fcoindre          #+#    #+#             */
+/*   Updated: 2022/09/15 21:10:28 by fcoindre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_BOOLEAN_H
-# define FT_BOOLEAN_H
-# include <unistd.h>
-
-# define EVEN_MSG "I have an even number of arguments.\n"
-# define ODD_MSG "I have an odd number of arguments.\n"
-# define SUCCESS 0
-
-# define EVEN(nbr) (!(nbr%2) ? 1 : 0)
-
-enum	e_bool
+#include <stdio.h>
+/*
+unsigned char	swap_bits(unsigned char octet)
 {
-	FALSE = 0,
-	TRUE = 1
-};
 
-typedef enum e_bool	t_bool;
 
-#endif
+}*/
+
+
+int main ()
+{
+	unsigned char octet = 120;
+	return ((octet >> 4) + (octet << 4));
+
+}

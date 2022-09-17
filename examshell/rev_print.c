@@ -9,14 +9,12 @@ char *ft_rev_print (char *str)
 	{
 		size++;
 	}
-
+	size--;
 	while (size >= 0)
 	{
 		write (1, &str[size], 1);
 		size--;
 	}
-
-	write(1,"\n",1);
 	
 	return str;
 }
@@ -24,8 +22,14 @@ char *ft_rev_print (char *str)
 int main (int argc, char *argv[])
 {
 	(void) argc;
-	ft_rev_print(argv[1]);
-	
+
+	if (argc == 2)
+	{
+		ft_rev_print(argv[1]);
+	}
+
+	write (1,"\n",1);
+
 	return 0;
 
 }

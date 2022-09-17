@@ -6,7 +6,7 @@
 /*   By: fcoindre <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 17:22:43 by fcoindre          #+#    #+#             */
-/*   Updated: 2022/09/15 17:22:59 by fcoindre         ###   ########.fr       */
+/*   Updated: 2022/09/16 10:02:28 by fcoindre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,8 @@ struct s_stock_str	*ft_strs_to_tab(int ac, char **av)
 		i++;
 	}
 	tab[ac].str = 0;
+	tab[ac].copy = 0;
+	tab[ac].size = 0;
 	return (tab);
 }
 /*
@@ -90,10 +92,12 @@ int main ()
 	
 	if (tab != NULL)
 	{
-		printf("str = %p, copy =  %p, size =  %d\n",
+		printf("str = %s, copy =  %p, size =  %d\n",
+	   	tab[0].str, tab[0].copy, tab[0].size);
+		printf("str = %s, copy =  %p, size =  %d\n",
 	   	tab[1].str, tab[1].copy, tab[1].size);
-		printf("str = %p, copy =  %p, size =  %d\n", 
-		tab[2].str, tab[2].copy, tab[2].size);
+		printf("str = %s, copy =  %s, size =  %d\n", 
+		tab[3].str, tab[3].copy, tab[3].size);
 	}
 	
 	return 0;

@@ -1,18 +1,27 @@
+#include <stdio.h>
 
-
-int main (int argc, char *argv)
+void	ft_swap(int *a, int *b)
 {
-	int i = 0;
 
-	while(argv[1][i] != '\0')
-	{
-		i++;
-	}
+	int temp;
+	temp = *a;
+	*a = *b;
+	*b = temp;
 
-	while (argv[1][i] != ' ' || )
-	{
 
-	}
+}
+
+
+
+int main ()
+{
+	int a = 15;
+
+	int b = 1500;
+
+	printf("a = %d et b = %d\n", a, b);
+	ft_swap (&a, &b);
+	printf("a = %d et b = %d", a, b);
 	
 
 
