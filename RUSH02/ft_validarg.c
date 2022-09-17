@@ -1,37 +1,52 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ckarl <marvin@42lausanne.ch>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/09 14:31:22 by ckarl             #+#    #+#             */
-/*   Updated: 2022/09/17 17:22:13 by fcoindre         ###   ########.fr       */
+/*   Created: 2022/09/17 10:36:28 by ckarl             #+#    #+#             */
+/*   Updated: 2022/09/17 18:40:28 by fcoindre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "ft_rush02.h"
 
-int	ft_atoi(char *str)
+int	ft_validint(char *str)
 {
 	int	i;
-	int	result;
-	int	sign;
 
-	sign = 1;
-	result = 0;
 	i = 0;
-	if (str[i] == '-')
-	{
-		sign = -1;
-		i++;
-	}
+	if (str[i] < '0' || str[i] > '9')
+		return (1);
 	while (str[i] >= '0' && str[i] <= '9')
 	{
-		if (str[i + 1] >= '0' && str[i + 1] <= '9')
-			result = (result + (str[i] - '0')) * 10;
+		if (str[i + 1] == '.' && (str[i + 2] >= '0' && str[i + 2] <= '9'))
+			return (1);
 		else
-			result = result + (str[i] - '0');
-		i++;
+			i++;
 	}
-	return (result * sign);
+	return (0);
+}
+
+int	ft_validarg(int argc, char **argv)
+{
+	int	x;
+
+	x = 0;
+	if (argc == 3 || argc == 2)
+	{
+		if (ft_validint(argv[argc - 1]) == 1 || ft_atoi(argv[argc - 1]) < 0)
+		{
+			write (1, "Error\n", 6);
+			return (-1);
+		}
+		x = ft_atoi(argv[argc - 1]);
+	}
+	else
+	{
+		write (1, "Error\n", 6);
+		return (-1);
+	}
+	return (x);
 }

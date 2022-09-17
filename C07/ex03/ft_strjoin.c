@@ -6,7 +6,7 @@
 /*   By: fcoindre <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 15:39:30 by fcoindre          #+#    #+#             */
-/*   Updated: 2022/09/14 11:33:19 by fcoindre         ###   ########.fr       */
+/*   Updated: 2022/09/17 19:17:52 by fcoindre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 int main ()
 {
 	char *strs[5];
-	int size = 5;
+	int size = 0;
 	char *sep = "\n";
 
 	strs[0] = "a";
