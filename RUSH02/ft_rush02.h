@@ -6,7 +6,7 @@
 /*   By: fcoindre <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 10:51:40 by fcoindre          #+#    #+#             */
-/*   Updated: 2022/09/18 10:55:31 by fcoindre         ###   ########.fr       */
+/*   Updated: 2022/09/18 12:44:42 by fcoindre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,16 +26,17 @@ struct s_num_expression
 
 typedef struct s_num_expression	t_num_expression;
 
-/*Fonctions de base*/
+/*Basic functions*/
 int					ft_atoi(char *str);
 char				*ft_strdup(char *src);
 int					ft_strlen(char *str);
+void				ft_putstr(char *str);
 
-/*Gestion des arguments*/
+/*Arguments gestion*/
 int					ft_validint(char *str);
 int					ft_validarg(int argc, char **argv);
 
-/*Lecture du dictionnaire */
+/*Read dictionnary*/
 char				*ft_read_dictionnary(int nbChars, char *dict_path);
 
 /*Affichage expression*/
@@ -52,5 +53,10 @@ char				**ft_split(char *str, char *charset);
 int					ft_parse_num(char *line);
 char				*ft_parse_expression(char *line);
 t_num_expression	*ft_num_strs_to_tab(char *dict);
+
+/*Display expression*/
+void				display_nbr(int nbr, t_num_expression *tab);
+void				ft_give_nbr(int divider, int nbr, t_num_expression *tab);
+void				ft_num_to_expression(int nbr, t_num_expression *tab);
 
 #endif

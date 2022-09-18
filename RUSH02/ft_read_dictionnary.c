@@ -6,7 +6,7 @@
 /*   By: ajelicic <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 16:55:28 by ajelicic          #+#    #+#             */
-/*   Updated: 2022/09/17 17:34:54 by fcoindre         ###   ########.fr       */
+/*   Updated: 2022/09/18 14:28:57 by fcoindre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,11 @@ char	*ft_read_dictionnary(int nbChars, char *dict_path)
 			return (0);
 		}
 		else
+		{
+			close (filedescriptor);
 			return (dico);
+		}
 	}
-	else
-	{
-		write(1, "Dict Error\n", 11);
-		return (0);
-	}
+	write(1, "Dict Error\n", 11);
+	return (0);
 }
