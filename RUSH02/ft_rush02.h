@@ -6,7 +6,7 @@
 /*   By: fcoindre <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 10:51:40 by fcoindre          #+#    #+#             */
-/*   Updated: 2022/09/17 19:06:10 by fcoindre         ###   ########.fr       */
+/*   Updated: 2022/09/18 10:55:31 by fcoindre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ char				*ft_read_dictionnary(int nbChars, char *dict_path);
 
 /*Affichage expression*/
 void				ft_num_to_expression(int nbr, t_num_expression *tab);
-
 
 /*Fonction split*/
 int					ft_is_separator(char *str, char *charset);

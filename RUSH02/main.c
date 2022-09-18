@@ -6,7 +6,7 @@
 /*   By: fcoindre <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 17:01:06 by fcoindre          #+#    #+#             */
-/*   Updated: 2022/09/17 20:44:57 by fcoindre         ###   ########.fr       */
+/*   Updated: 2022/09/18 11:30:28 by fcoindre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,23 +93,58 @@ void	ft_num_to_expression(int nbr, t_num_expression *tab)
 			display_nbr(digit, tab);
 			write(1," ",1);
 			display_nbr (divider, tab);	
-			write (1, " ",1);
 			nbr = nbr - (digit * divider);
 			divider = divider / 10;
 		}
 		if (nbr != 0)
 		{
+			write (1, " ",1);
 			ft_num_to_expression(nbr, tab);
 		}
 	}
 
-	if (nbr >= 10000 && nbr <100000)
+	if (nbr >= 10000 && nbr < 1000000)
 	{
 		divider = 1000;
 		ft_num_to_expression((nbr / divider), tab);
-
+		write (1, " ",1);
+		display_nbr(divider, tab);
+		digit = nbr - ((nbr/divider) * divider);
+		if (digit != 0)
+		{
+			write (1, " ",1);
+			ft_num_to_expression(digit, tab);
+		}
 	}
 
+	//1million
+	if (nbr >= 1000000 && nbr < 1000000000)
+	{
+		divider = 1000000;
+		ft_num_to_expression((nbr / divider), tab);
+		write (1, " ",1);
+		display_nbr(divider, tab);
+		digit = nbr - ((nbr/divider) * divider);
+		if (digit != 0)
+		{
+			write (1, " ",1);
+			ft_num_to_expression(digit, tab);
+		}
+	}
+	
+	if (nbr >= 1000000000)
+	{
+		divider = 1000000000;
+		ft_num_to_expression((nbr / divider), tab);
+		write (1, " ",1);
+		display_nbr(divider, tab);
+		digit = nbr - ((nbr/divider) * divider);
+		if (digit != 0)
+		{
+			write (1, " ",1);
+			ft_num_to_expression(digit, tab);
+		}
+	}
 }
 
 

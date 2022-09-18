@@ -6,10 +6,10 @@
 /*   By: fcoindre <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 18:48:36 by fcoindre          #+#    #+#             */
-/*   Updated: 2022/09/17 18:52:00 by fcoindre         ###   ########.fr       */
+/*   Updated: 2022/09/18 10:59:30 by fcoindre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+/*
 #include "ft_rush02.h"
 
 void	ft_num_to_expression(int nbr)
@@ -17,4 +17,4 @@ void	ft_num_to_expression(int nbr)
 
 
 
-}
+}*/

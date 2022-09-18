@@ -6,7 +6,7 @@
 /*   By: fcoindre <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 17:22:43 by fcoindre          #+#    #+#             */
-/*   Updated: 2022/09/16 10:02:28 by fcoindre         ###   ########.fr       */
+/*   Updated: 2022/09/18 10:19:29 by fcoindre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ char	*ft_strdup(char *src)
 	int		src_size;
 
 	src_size = ft_strlen(src);
-	src_dup = malloc(src_size * sizeof(*src));
+	src_dup = malloc((src_size + 1) * sizeof(*src));
 	if (src_dup == NULL)
 		return (NULL);
 	i = 0;
@@ -82,8 +82,10 @@ int main ()
 	char *av[3];
 	int ac = 3;
 
-	av[0] = "premiere chaine";
-	av[1] = "seconde chaine";
+	av[0] = "premiere chaine beacoup plus longue 
+	pour verifier la segfault de la moulinette";
+	av[1] = "seconde chaine tres tres tres tres tres
+   	tres tres tres tres tres trestr longue pour  la memme raiison ....";
 	av[2] = "Aller courage !!!";
 
 	t_stock_str *tab = ft_strs_to_tab(ac, av);
