@@ -6,7 +6,7 @@
 /*   By: fcoindre <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/18 14:47:32 by fcoindre          #+#    #+#             */
-/*   Updated: 2022/09/19 17:23:15 by fcoindre         ###   ########.fr       */
+/*   Updated: 2022/09/19 17:21:57 by fcoindre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,39 +129,24 @@ char	**ft_split(char *str, char *charset)
 {
 	int		h;
 	int		i;
-	int		j;
 	char	**tab;
-	char	*word;
 	int		size_word;
 	int		word_count;
 
 	size_word = 0;
 	tab = NULL;
-	word = NULL;
 	word_count = ft_word_count(str, charset);
 	tab = malloc(sizeof(char *) * (word_count + 1));
 	if (tab == NULL)
 		return (NULL);
 	h = 0;
 	i = 0;
-	j = 0;
 	while (h < word_count)
 	{
 		size_word = ft_size_word(i, str, charset);
 		if (size_word > 0)
-		{	
-			word = malloc((size_word + 1) * sizeof(char));
-			if (word == NULL)
-				return (NULL);
-			j = 0;
-			while (j < size_word)
-			{
-				word[j] = str[i];
-				j++;
-				i++;
-			}
-			word[j] = '\0';
-			tab[h] = word;
+		{
+			tab[h] = ft_cpy_word (i, size_word, str);
 			h++;
 		}
 		i++;
