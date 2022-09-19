@@ -6,7 +6,7 @@
 /*   By: fcoindre <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 17:22:43 by fcoindre          #+#    #+#             */
-/*   Updated: 2022/09/18 10:19:29 by fcoindre         ###   ########.fr       */
+/*   Updated: 2022/09/19 12:04:52 by fcoindre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,8 @@ char	*ft_strdup(char *src)
 {
 	char	*src_dup;
 	int		i;
-	int		src_size;
 
-	src_size = ft_strlen(src);
-	src_dup = malloc((src_size + 1) * sizeof(*src));
+	src_dup = malloc((ft_strlen(src) + 1) * sizeof(*src));
 	if (src_dup == NULL)
 		return (NULL);
 	i = 0;
@@ -56,12 +54,8 @@ struct s_stock_str	*ft_strs_to_tab(int ac, char **av)
 	int			i;
 	t_stock_str	*tab;
 
-	if (ac <= 0)
-	{
-		return (NULL);
-	}
-	tab = malloc((ac + 1) * sizeof(t_stock_str));
-	if (tab == NULL)
+	tab = malloc(sizeof(t_stock_str) * (ac + 1));
+	if (!tab)
 		return (NULL);
 	i = 0;
 	while (i < ac)
@@ -71,23 +65,24 @@ struct s_stock_str	*ft_strs_to_tab(int ac, char **av)
 		tab[i].copy = ft_strdup(av[i]);
 		i++;
 	}
-	tab[ac].str = 0;
-	tab[ac].copy = 0;
-	tab[ac].size = 0;
+	tab[i].str = 0;
+	tab[i].copy = 0;
+	tab[i].size = 0;
 	return (tab);
 }
 /*
 int main ()
 {
-	char *av[3];
-	int ac = 3;
-
-	av[0] = "premiere chaine beacoup plus longue 
-	pour verifier la segfault de la moulinette";
-	av[1] = "seconde chaine tres tres tres tres tres
-   	tres tres tres tres tres trestr longue pour  la memme raiison ....";
+	char *av[0];
+	int ac = 0;
+	
+	av[0] = "premiere chaine beacoup plus longue pour verifier 
+	la segfault de la moulinette";
+	av[1] = "seconde chaine tres tres tres tres tres tres 
+	tres tres tres tres trestr longue pour  la memme raiison ....";
 	av[2] = "Aller courage !!!";
-
+	av[3] = "Punaise mais cet exo etait dans le RUSH !!";
+	
 	t_stock_str *tab = ft_strs_to_tab(ac, av);
 
 	printf("Pointeur = %p\n", tab);
@@ -100,6 +95,7 @@ int main ()
 	   	tab[1].str, tab[1].copy, tab[1].size);
 		printf("str = %s, copy =  %s, size =  %d\n", 
 		tab[3].str, tab[3].copy, tab[3].size);
+
 	}
 	
 	return 0;
