@@ -6,7 +6,7 @@
 /*   By: fcoindre <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/18 14:47:32 by fcoindre          #+#    #+#             */
-/*   Updated: 2022/09/19 17:23:15 by fcoindre         ###   ########.fr       */
+/*   Updated: 2022/09/19 19:50:23 by fcoindre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,50 +64,20 @@ int	ft_size_word(int index, char *str, char *charset)
 
 	index_ini = index;
 	count = 0;
-	while (ft_is_separator(str[index], charset) == 0)
+	while (str[index] != '\0' && ft_is_separator(str[index], charset) == 0)
 	{
 		index++;
 	}
 	count = index - index_ini;
 	return (count);
 }
-/*
-int	ft_feed_tab(char *str, char *charset, char **tab)
+
+char	*ft_cpy_word(int i, int size_word, char *str)
 {
-	int		i;
-	int		j;
-	int		size_word;
 	char	*word;
-
-	i = 0;
-	j = 0;
-	size_word = ft_size_word(i, str, charset);
-	if (size_word > 0)
-	{	
-		word = malloc((size_word + 1) * sizeof(char));
-		if (word == NULL)
-			return (NULL);
-		j = 0;
-		while (j < size_word)
-		{
-			word[j] = str[i];
-			j++;
-			i++;
-		}
-		word[j] = '\0';
-		tab[h] = word;
-
-	}
-	return (0);
-}*/
-
-char *ft_cpy_word(int i, int size_word, char *str)
-{
-	char *word;
-	int j;
+	int		j;
 
 	word = malloc((size_word + 1) * sizeof(char));
-
 	if (word == NULL)
 		return (NULL);
 	j = 0;
@@ -118,55 +88,35 @@ char *ft_cpy_word(int i, int size_word, char *str)
 		i++;
 	}
 	word[j] = '\0';
-	
-	return word;
-
+	return (word);
 }
-
-
 
 char	**ft_split(char *str, char *charset)
 {
 	int		h;
 	int		i;
-	int		j;
 	char	**tab;
-	char	*word;
 	int		size_word;
 	int		word_count;
 
-	size_word = 0;
-	tab = NULL;
-	word = NULL;
 	word_count = ft_word_count(str, charset);
 	tab = malloc(sizeof(char *) * (word_count + 1));
 	if (tab == NULL)
 		return (NULL);
 	h = 0;
 	i = 0;
-	j = 0;
 	while (h < word_count)
 	{
 		size_word = ft_size_word(i, str, charset);
 		if (size_word > 0)
 		{	
-			word = malloc((size_word + 1) * sizeof(char));
-			if (word == NULL)
-				return (NULL);
-			j = 0;
-			while (j < size_word)
-			{
-				word[j] = str[i];
-				j++;
-				i++;
-			}
-			word[j] = '\0';
-			tab[h] = word;
+			tab[h] = ft_cpy_word(i, size_word, str);
+			i += size_word;
 			h++;
 		}
-		i++;
+		i ++;
 	}
-	tab[i] = 0;
+	tab[h] = 0;
 	return (tab);
 }
 
@@ -174,9 +124,9 @@ int main ()
 {
 
 	
-	char *str = "bonjour ca va decouper severe       ";
+	char *str = "test   banane poire   blanc  Bollet   ";
 	//char *str = "chaineALouisAnicet";
-	char *charset = "abc";
+	char *charset = "  \t  B";
 
 	int r = ft_word_count(str, charset);
 
