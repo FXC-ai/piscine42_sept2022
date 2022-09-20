@@ -6,12 +6,11 @@
 /*   By: fcoindre <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/18 14:47:32 by fcoindre          #+#    #+#             */
-/*   Updated: 2022/09/19 19:50:23 by fcoindre         ###   ########.fr       */
+/*   Updated: 2022/09/20 17:49:28 by fcoindre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
 
 int	ft_is_separator(char caract, char *charset)
@@ -119,14 +118,14 @@ char	**ft_split(char *str, char *charset)
 	tab[h] = 0;
 	return (tab);
 }
-
+/*
 int main ()
 {
 
 	
-	char *str = "test   banane poire   blanc  Bollet   ";
+	char *str = "   test BBB  B  banane poire \t  blanc  bollet   ";
 	//char *str = "chaineALouisAnicet";
-	char *charset = "  \t  B";
+	char *charset = "\tB";
 
 	int r = ft_word_count(str, charset);
 
@@ -147,4 +146,4 @@ int main ()
 	}
 
 	return (0);
-}
+}*/

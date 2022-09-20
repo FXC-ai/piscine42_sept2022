@@ -6,11 +6,11 @@
 /*   By: fcoindre <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 15:40:28 by fcoindre          #+#    #+#             */
-/*   Updated: 2022/09/20 15:52:19 by fcoindre         ###   ########.fr       */
+/*   Updated: 2022/09/20 17:27:37 by fcoindre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.a"
+#include "includes/ft.h"
 
 int main ()
 {
