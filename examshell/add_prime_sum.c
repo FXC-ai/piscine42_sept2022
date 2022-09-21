@@ -6,7 +6,7 @@
 /*   By: fcoindre <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 18:46:39 by fcoindre          #+#    #+#             */
-/*   Updated: 2022/09/21 09:10:01 by fcoindre         ###   ########.fr       */
+/*   Updated: 2022/09/21 09:41:05 by fcoindre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,10 +88,17 @@ int ft_find_prime (int nb)
 		return 0;
 	}
 
-	if (nb == 2)
+	if (nb == 2 || nb == 3)
 	{
 		return 1;
 	}
+
+	if (nb == 4)
+	{
+		return 0;
+
+	}
+
 
 	int i = 2;
 	while (i < (nb / i))
@@ -113,17 +120,31 @@ int main(int argc, char *argv[])
 {
 	(void) argc;
 	(void) argv;
-/*
-	if (argc == 2 && argv[1] )
+
+	int i = 0;
+	if (argc == 2 && ft_atoi(argv[1]) >= 0)
 	{
+		int cible = ft_atoi(argv[1]);
+		int sum = 0;
+		while (i <= cible)
+		{
+			printf("i = %d  ", i);
+			if (ft_find_prime(i) == 1)
+			{
+				sum += i;
+			}
+			i++;
+			printf("R = %d\n", sum);
+		}
+
 
 
 	}
-*/
+
 	//ft_putnbr(2147483647);
-	printf("ft_atoi = %d \n", ft_atoi("2147483647"));
+	//printf("ft_atoi = %d \n", ft_atoi("2147483647"));
 	
-	//printf("ft_find_prime : %d", ft_find_prime(2147483647));
+	printf("ft_find_prime : %d", ft_find_prime(4));
 
 
 }

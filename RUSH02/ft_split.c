@@ -3,83 +3,147 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asoursou <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: fcoindre <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/10 05:33:05 by asoursou          #+#    #+#             */
-/*   Updated: 2022/09/17 13:49:47 by fcoindre         ###   ########.fr       */
+/*   Created: 2022/09/18 14:47:32 by fcoindre          #+#    #+#             */
+/*   Updated: 2022/09/21 09:45:04 by fcoindre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_rush02.h"
+#include <stdio.h>
+#include <stdlib.h>
 
-int		ft_is_separator(char *str, char *charset)
+int	ft_is_separator(char caract, char *charset)
 {
-	while (*charset)
-		if (*str == *charset++)
+	int	i;
+
+	i = 0;
+	while (charset[i] != '\0')
+	{
+		if (charset[i] == caract)
+		{
 			return (1);
+		}
+		i++;
+	}
 	return (0);
 }
 
-int		ft_wordlen(char *str, char *charset)
+int	ft_word_count(char *str, char *charset)
 {
-	int i;
+	int	word_count;
+	int	i;
+	int	word_check;
 
 	i = 0;
-	while (str[i] && !ft_is_separator(str + i, charset))
-		i++;
-	return (i);
-}
-
-int		ft_wordcount(char *str, char *charset)
-{
-	int i;
-	int w;
-
-	w = 0;
-	while (*str)
+	word_count = 0;
+	word_check = 0;
+	while (str[i] != '\0')
 	{
-		while (*str && ft_is_separator(str, charset))
-			str++;
-		i = ft_wordlen(str, charset);
-		str += i;
-		if (i)
-			w++;
+		if (ft_is_separator(str[i], charset) == 0)
+			word_check++;
+		if (ft_is_separator(str[i], charset) == 1 && word_check > 0)
+		{
+			word_count++;
+			word_check = 0;
+		}
+		i++;
 	}
-	return (w);
+	if (word_check > 0)
+	{
+		word_count++;
+	}
+	return (word_count);
 }
 
-char	*ft_wordcpy(char *src, int n)
+int	ft_size_word(int index, char *str, char *charset)
 {
-	char	*dest;
+	int		count;
+	int		index_ini;
 
-	if (!(dest = malloc((n + 1) * sizeof(char))))
+	index_ini = index;
+	count = 0;
+	while (str[index] != '\0' && ft_is_separator(str[index], charset) == 0)
+	{
+		index++;
+	}
+	count = index - index_ini;
+	return (count);
+}
+
+char	*ft_cpy_word(int i, int size_word, char *str)
+{
+	char	*word;
+	int		j;
+
+	word = malloc((size_word + 1) * sizeof(char));
+	if (word == NULL)
 		return (NULL);
-	dest[n] = '\0';
-	while (n--)
-		dest[n] = src[n];
-	return (dest);
+	j = 0;
+	while (j < size_word)
+	{
+		word[j] = str[i];
+		j++;
+		i++;
+	}
+	word[j] = '\0';
+	return (word);
 }
 
 char	**ft_split(char *str, char *charset)
 {
-	char	**t;
-	int		size;
+	int		h;
 	int		i;
-	int		n;
+	char	**tab;
+	int		size_word;
+	int		word_count;
 
-	size = ft_wordcount(str, charset);
-	if (!(t = malloc((size + 1) * sizeof(char*))))
+	word_count = ft_word_count(str, charset);
+	tab = malloc(sizeof(char *) * (word_count + 1));
+	if (tab == NULL)
 		return (NULL);
-	i = -1;
-	while (++i < size)
+	h = 0;
+	i = 0;
+	while (h < word_count)
 	{
-		while (*str && ft_is_separator(str, charset))
-			str++;
-		n = ft_wordlen(str, charset);
-		if (!(t[i] = ft_wordcpy(str, n)))
-			return (NULL);
-		str += n;
+		size_word = ft_size_word(i, str, charset);
+		if (size_word > 0)
+		{	
+			tab[h] = ft_cpy_word(i, size_word, str);
+			i += size_word;
+			h++;
+		}
+		i ++;
 	}
-	t[size] = 0;
-	return (t);
+	tab[h] = 0;
+	return (tab);
 }
+/*
+int main ()
+{
+
+	
+	char *str = "   test BBB  B  banane poire \t  blanc  bollet   ";
+	//char *str = "chaineALouisAnicet";
+	char *charset = "\tB";
+
+	int r = ft_word_count(str, charset);
+
+	printf("Nombre de mots : %d\n", r);
+
+	//int s = ft_size_word(20, str, charset);
+
+	//printf("Taille du mot : %d\n", s);
+	
+	char **tab = ft_split(str, charset);
+
+	int i = 0;
+
+	while (tab[i] != 0)
+	{
+		printf("tab[%d] = \"%s\"\n", i, tab[i]);
+		i++;
+	}
+
+	return (0);
+}*/
