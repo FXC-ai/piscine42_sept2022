@@ -6,14 +6,13 @@
 /*   By: fcoindre <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 18:34:36 by fcoindre          #+#    #+#             */
-/*   Updated: 2022/09/21 18:55:19 by fcoindre         ###   ########.fr       */
+/*   Updated: 2022/09/21 21:00:37 by fcoindre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <unistd.h>
-
-
+/*
 void ft_putnbr (int nb)
 {
 	int mod = 0;
@@ -45,27 +44,19 @@ void ft_putnbr (int nb)
 		}
 	}
 }
-
-void	ft_foreach(int *tab, int length, void(*f)(int))
+*/
+void	ft_foreach(int *tab, int length, void (*f)(int))
 {
-	(void) tab;
-	(void) length;
-	(void) f;
-
 	int	i;
 
 	i = 0;
 	while (i < length)
 	{
-		*f(tab[i]);
+		f(tab[i]);
 		i++;
-
 	}
-
-	printf("test\n");
-
 }
-
+/*
 int main ()
 {
 	int tab[5];
@@ -84,4 +75,4 @@ int main ()
 	ft_foreach(tab, 5, ptr_putnbr);
 
 	return 0;
-}
+}*/
