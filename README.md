@@ -20,10 +20,10 @@ La pédagogie 42 :  apprentissage collaboratif, sans cours magistraux, via des e
 
 ## Très rapide aperçu du contenu des dossiers :
 
-Shell00 / Shell01 : exercices de commandes shell (permissions, scripts, pipes, etc.).
-C00 : fonctions de base, ft_putchar, ft_putstr, ft_strlen, etc.
-C01 : manipulation de chaînes et tableaux.
-C02 à C05 : pointeurs, mémoire dynamique, tableaux, fonctions récursives.
-C06 à C09 : fichiers, structs, tri, algorithmes plus avancés.
-Rush00 / Rush01 / Rush02 : mini-projets collaboratifs en C, souvent avec rendu graphique ASCII (ex : dessiner un rectangle, créer un jeu de logique).
-Exam00 / Exam01 : examens blancs avec exercices aléatoires à réaliser sous contrainte de temps.
+- Shell00 / Shell01 : exercices de commandes shell (permissions, scripts, pipes, etc.).
+- C00 : fonctions de base, ft_putchar, ft_putstr, ft_strlen, etc.
+- C01 : manipulation de chaînes et tableaux.
+- C02 à C05 : pointeurs, mémoire dynamique, tableaux, fonctions récursives.
+- C06 à C09 : fichiers, structs, tri, algorithmes plus avancés.
+- Rush00 / Rush01 / Rush02 : mini-projets collaboratifs en C.
+- Examshell : examens blancs avec exercices aléatoires à réaliser sous contrainte de temps.
