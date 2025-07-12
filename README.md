@@ -27,3 +27,5 @@ La pédagogie 42 :  apprentissage collaboratif, sans cours magistraux, via des e
 - C06 à C09 : fichiers, structs, tri, algorithmes plus avancés.
 - Rush00 / Rush01 / Rush02 : mini-projets collaboratifs en C.
 - Examshell : examens blancs avec exercices aléatoires à réaliser sous contrainte de temps.
+
+![cluster](https://github.com/FXC-ai/piscine42_sept2022/blob/main/42cluster.jpeg)
