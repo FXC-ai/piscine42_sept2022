@@ -15,7 +15,7 @@ La pédagogie 42 :  apprentissage collaboratif, sans cours magistraux, via des e
 ### Soft skills :
 
 - Apprentissage autonome : chercher, expérimenter, échanger avec ses pairs.
-- Travail en équipe : notamment dans les "Rush", où les binômes/trinômes doivent coordonner leurs efforts dans un temps contraint.
+- Travail en équipe : notamment dans les "Rush", où les trinômes doivent coordonner leurs efforts dans un temps contraint.
 - Gestion du temps et résilience : les 26 jours sont intenses !
 
 ## Très rapide aperçu du contenu des dossiers :
